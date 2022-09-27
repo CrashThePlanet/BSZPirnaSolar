@@ -1,0 +1,35 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --headerHeight: 7vh;
+    --footHeight: 11vh;
+}
+
+ .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "header header"
+    "left right"
+    "footer footer";
+    grid-template-rows: var(--headerHeight) calc(100vh - var(--headerHeight) - var(--footHeight)) var(--footHeight);
+  }
+  .header {
+    grid-area: header;
+    background-color: green;
+  }
+  .left {
+    background-color: red;
+    grid-area: left;
+  }
+  .right{
+    background-color: orange;
+    grid-area: right;
+  }
+  .footer {
+    grid-area: footer;
+    background-color: blue;
+  }
